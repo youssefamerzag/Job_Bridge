@@ -8,6 +8,7 @@
 .offer {
   width: 350px;
   max-width: 350px;
+  min-width: 350px;
   height: 200px;
   display: flex;
   flex-direction: column;
