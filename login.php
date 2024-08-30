@@ -9,19 +9,27 @@
 </head>
 
 <body>
-    <?php 
-    require "header.php" ;
+    <?php
+    require "header.php";
     require "db.php";
 
-    if(isset($_POST['email'] , $_POST['password'])){
+    if (isset($_POST['email'], $_POST['password'])) {
         $select = $db->prepare('SELECT * from users where email = ?');
         $select->execute([$_POST['email']]);
         $user = $select->fetch(PDO::FETCH_OBJ);
-        if(password_verify($_POST['password'] , $user->password)){
+        if (password_verify($_POST['password'], $user->password)) {
             $_SESSION['user_id'] = $user->id;
             $_SESSION['user_name'] = $user->name;
             $_SESSION['user_email'] = $user->email;
             $_SESSION['user_phone'] = $user->phone;
+
+            $token = bin2hex(random_bytes(32)); 
+
+            $update = $db->prepare('UPDATE users SET token = ? WHERE id = ?');
+            $update->execute([$token, $user->id]);
+
+            $_SESSION['token'] = $token;
+
             header('Location: index.php');
         }
     }

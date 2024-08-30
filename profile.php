@@ -3,9 +3,22 @@
 require 'header.php';
 require 'db.php';
 
-if(empty($_SESSION['user_id'])){
+
+if (isset($_SESSION['user_id'], $_SESSION['token'])) {
+    $select = $db->prepare('SELECT * FROM users WHERE id = ? AND token = ?');
+    $select->execute([$_SESSION['user_id'], $_SESSION['token']]);
+    $authenticatedUser = $select->fetch(PDO::FETCH_OBJ);
+
+    if (!$authenticatedUser) {
+        header('Location: login.php');
+        exit();
+    }
+
+} else {
     header('Location: login.php');
+    exit();
 }
+
 
 $select = $db->prepare('select * from offers where user_id = ?');
 $select->execute([$_SESSION['user_id']]);
