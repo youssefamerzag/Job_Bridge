@@ -1,0 +1,155 @@
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding-top: 70px; /* Added padding to prevent content overlap with the fixed navbar */
+}
+
+/* Navbar Styles */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  overflow: hidden;
+  z-index: 1000; /* Ensure the navbar is on top of other elements */
+}
+
+.navbar .logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: #333;
+}
+
+.navbar .divNavLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+  padding: 0; /* Remove default padding */
+}
+
+.navLinks li {
+  margin: 0 10px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #4A90E2;
+}
+
+.signHeaderButton {
+  background-color: #4A90E2;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signHeaderButton:hover {
+  background-color: #00b4d8;
+}
+
+.headerButtonsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sign-in form */
+
+.formDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.formDiv form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputsDiv {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.inputsDiv p {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.inputsDiv input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.inputsDiv input:focus {
+  border-color: #4A90E2;
+  outline: none;
+}
+
+.signButton {
+  padding: 12px 20px;
+  background-color: #4A90E2;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.signButton:hover {
+  background-color: #00b4d8;
+}
+
+

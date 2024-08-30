@@ -1,0 +1,59 @@
+.offers {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.offer {
+  width: 350px;
+  max-width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px #ddd solid;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.userProfileBox {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  border: 1px #ddd solid;
+  border-radius: 8px;
+  background-color: white;
+  padding: 30px;
+  gap: 40px;
+}
+
+.userOfferDescription {
+  font-size: 15px;
+  color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.userOfferTtitle {
+  font-size: 25px;
+  font-weight: 600;
+  color: #4A90E2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

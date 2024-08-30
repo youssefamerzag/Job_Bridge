@@ -40,7 +40,7 @@
                 <p>Password</p>
                 <input type="password" name="password">
             </div>
-            <input type="submit" class="signButton value="Sign In">
+            <input type="submit" class="signButton" value="Sign In">
         </form>
     </div>
     <?php require "footer.php" ?>

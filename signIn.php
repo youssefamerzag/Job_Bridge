@@ -64,7 +64,7 @@
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px;">
                 <input class="signButton" type="submit" value="Sign In">
-                <a onclick="location.href='login.php'" style="text-decoration: underline;color: #00b4d8;font-size: 14px;">You Already Have an Account</a>
+                <a href='login.php' style="text-decoration: underline;color: #00b4d8;font-size: 14px;">You Already Have an Account</a>
             </div>
         </form>
     </div>

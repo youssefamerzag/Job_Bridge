@@ -1,0 +1,95 @@
+.indexheader {
+    width: 100%;
+    height: 500px;
+    background-image: url('../imgs/header_img.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative; /* Position relative to allow absolute positioning of the overlay */
+    overflow: hidden; /* Prevent any overflow of child elements */
+  }
+  
+  .indexheader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure the overlay is above the background image but below content */
+  }
+  
+  .indexheader > * {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2; /* Set higher z-index for content to appear above the overlay */
+  }
+
+  .indexBody {
+    margin-top: -25px;
+  }
+  
+  .indexSearchInput {
+    width: 400px;
+    padding: 10px 15px 10px 15px;
+    font-size: 25px;
+    border: 1px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border: 1px solid gray;
+  }
+  
+  .indexSearchButton {
+    padding: 0px 20px 0px 20px;
+    background-color: #4A90E2;
+    border: none;
+    color : white;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+
+
+.offers {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+  
+  .offer {
+    width: 350px;
+    max-width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px #ddd solid;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .userOfferDescription {
+    font-size: 15px;
+    color: gray;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .userOfferTtitle {
+    font-size: 25px;
+    font-weight: 600;
+    color: #4A90E2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+

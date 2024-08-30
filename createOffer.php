@@ -2,6 +2,9 @@
 require 'header.php';
 require 'db.php';
 
+if(empty($_SESSION['user_id'])){
+    header('Location: login.php');
+}
 
 if(isset($_POST['title'] , $_POST['entreprise'], $_POST['description'])){
 
