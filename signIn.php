@@ -22,9 +22,10 @@
     if (isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password'])) {
         if ($_POST['password'] === $_POST['confirmPassword']) {
             $newUserId = $totalUsers + 1;
-            $sql = $db->prepare('insert into users values(? ,? , ?, ?, ?)');
+            $sql = $db->prepare('insert into users values(? ,? , ?, ?, ?, ?)');
             $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $sql->execute([$newUserId, $_POST['name'], $_POST['email'], $_POST['phone'], $hashed_password]);
+            $token = bin2hex(random_bytes(32)); 
+            $sql->execute([$newUserId, $_POST['name'], $_POST['email'], $_POST['phone'], $hashed_password,$token]);
             header("location:login.php");
         } else {
             $err = 'Password is Not Match';
