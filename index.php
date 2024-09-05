@@ -82,16 +82,21 @@ if (empty($offers)) {
                     } ?></p>
                 <div style="width: 100%; display: flex; flex-wrap: wrap; gap: 30px;justify-content: start;">
                     <?php foreach ($offers as $offer) { ?>
-                        <div style="width: 300px;height: 200px; display: flex; flex-direction: column;  justify-content: space-between;  border: 1px #ddd solid;border-radius: 8px;padding: 20px;background-color: white;">
-                            <div style="display: flex; flex-direction:column ;gap: 10px;">
-                                <p class="userOfferTtitle"><?php echo $offer->title ?></p>
-                                <p style="font-size: 13px;">Type <?php echo $offer->type ?></p>
-                                <p class="userOfferDescription"><?php echo $offer->description ?></p>
+                        <div style="width: 300px;height: 220px; display: flex; flex-direction: column;  justify-content: space-between;  border: 1px #ddd solid;border-radius: 8px;padding: 20px;background-color: white;">
+                            <div>
+                                <div style="display: flex; flex-direction:column ;gap: 10px;">
+                                    <p class="userOfferTtitle"><?php echo $offer->title ?></p>
+                                    <p style="font-size: 13px;">Type: <?php echo $offer->type ?></p>
+                                    <p style="  font-size: 15px;color: gray;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;"><?php echo $offer->description ?></p>
+                                </div>
                             </div>
-                            <div style="display: flex; align-items: center;gap: 10px;">
-                                <img width="20" height="20" src="https://img.icons8.com/ios-filled/100/4a90e2/company.png" alt="company" />
-                                <p><?php echo $offer->entreprise ?></p>
-                            </div>
+                            <form action="index.php" method="post" style="width: 100%;display: flex; flex-direction: column;gap: 10px;">
+                                <div style="display: flex; align-items: center;gap: 10px;">
+                                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/100/4a90e2/company.png" alt="company" />
+                                    <p style="font-size: 13px;"><?php echo $offer->entreprise ?></p>
+                                </div>
+                                <button type="submit" style="width: 100%;background-color: #4A90E2; color:white;padding: 5px 10px ;border: none;border-radius: 5px;" formaction="post.php" name="show" value="<?php echo $offer->id ?>">show</button>
+                            </form>
                         </div>
                     <?php } ?>
                 </div>
