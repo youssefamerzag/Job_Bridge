@@ -13,7 +13,6 @@ if (isset($_SESSION['user_id'], $_SESSION['token'])) {
         header('Location: login.php');
         exit();
     }
-
 } else {
     header('Location: login.php');
     exit();
@@ -66,17 +65,20 @@ $offers = $select->fetchAll(PDO::FETCH_OBJ);
             <p style="font-size: 35px;">My Offers</p>
         </div>
         <div style="display: flex; justify-content: center; width: 100%;">
-            <div class="offers">
+            <div style="width: 100%; display: flex; flex-wrap: wrap; gap: 30px;justify-content: center;">
                 <?php foreach ($offers as $offer) { ?>
-                    <div class="offer">
+                    <div style="width: 300px;height: 220px; display: flex; flex-direction: column;  justify-content: space-between;  border: 1px #ddd solid;border-radius: 8px;padding: 20px;background-color: white;">
                         <div style="display: flex; flex-direction:column ;gap: 10px;">
                             <p class="userOfferTtitle"><?php echo $offer->title ?></p>
                             <p class="userOfferDescription"><?php echo $offer->description ?></p>
                         </div>
-                        <div style="display: flex; align-items: center;gap: 10px;">
-                            <img width="20" height="20" src="https://img.icons8.com/ios-filled/100/4a90e2/company.png" alt="company" />
-                            <p><?php echo $offer->entreprise ?></p>
-                        </div>
+                        <form action="index.php" method="post" style="width: 100%;display: flex; flex-direction: column;gap: 10px;">
+                            <div style="display: flex; align-items: center;gap: 10px;">
+                                <img width="20" height="20" src="https://img.icons8.com/ios-filled/100/4a90e2/company.png" alt="company" />
+                                <p style="font-size: 13px;"><?php echo $offer->entreprise ?></p>
+                            </div>
+                            <button type="submit" style="width: 100%;background-color: #4A90E2; color:white;padding: 10px 10px ;border: none;border-radius: 5px;" formaction="post.php" name="show" value="<?php echo $offer->id ?>">show</button>
+                        </form>
                     </div>
                 <?php } ?>
             </div>

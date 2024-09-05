@@ -82,7 +82,7 @@ if (empty($offers)) {
                     } ?></p>
                 <div style="width: 100%; display: flex; flex-wrap: wrap; gap: 30px;justify-content: start;">
                     <?php foreach ($offers as $offer) { ?>
-                        <div style="width: 300px;height: 220px; display: flex; flex-direction: column;  justify-content: space-between;  border: 1px #ddd solid;border-radius: 8px;padding: 20px;background-color: white;">
+                        <div style="width: 300px;height: 250px; display: flex; flex-direction: column;  justify-content: space-between;  border: 1px #ddd solid;border-radius: 8px;padding: 20px;background-color: white;">
                             <div>
                                 <div style="display: flex; flex-direction:column ;gap: 10px;">
                                     <p class="userOfferTtitle"><?php echo $offer->title ?></p>
@@ -95,7 +95,11 @@ if (empty($offers)) {
                                     <img width="20" height="20" src="https://img.icons8.com/ios-filled/100/4a90e2/company.png" alt="company" />
                                     <p style="font-size: 13px;"><?php echo $offer->entreprise ?></p>
                                 </div>
-                                <button type="submit" style="width: 100%;background-color: #4A90E2; color:white;padding: 5px 10px ;border: none;border-radius: 5px;" formaction="post.php" name="show" value="<?php echo $offer->id ?>">show</button>
+                                <div style="display: flex; align-items: center;gap: 10px;">
+                                    <img width="20" height="20" src="https://img.icons8.com/glyph-neue/64/4a90e2/address.png" alt="address" />
+                                    <p style="font-size: 13px;"><?php echo $offer->adresse ?></p>
+                                </div>
+                                <button type="submit" style="width: 100%;background-color: #4A90E2; color:white;padding: 10px 10px ;border: none;border-radius: 5px;" formaction="post.php" name="show" value="<?php echo $offer->id ?>">show</button>
                             </form>
                         </div>
                     <?php } ?>

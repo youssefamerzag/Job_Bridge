@@ -33,7 +33,7 @@ if (isset($_POST['show'])) {
                         </div>
                         <div style="display: flex; align-items: center;gap: 10px;">
                             <img width="30" height="30" src="https://img.icons8.com/glyph-neue/64/4a90e2/address.png" alt="address" />
-                            <p style="font-size: 13px;"><?php echo $offer->entreprise ?></p>
+                            <p style="font-size: 13px;"><?php echo $offer->adresse ?></p>
                         </div>
                     </div>
                 </div>
